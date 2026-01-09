@@ -13,9 +13,7 @@ const Login = lazy(() => import('../pages/Login'));
 
 // Loading spinner component
 const LoadingSpinner: FC = () => (
-  <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
-    Loading...
-  </div>
+  <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>Loading...</div>
 );
 
 // Suspense wrapper
