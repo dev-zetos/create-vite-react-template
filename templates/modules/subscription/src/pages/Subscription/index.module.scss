@@ -1,0 +1,92 @@
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 24px;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.subtitle {
+  color: var(--text-secondary);
+  font-size: 16px;
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 400px;
+}
+
+.planCard {
+  height: 100%;
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-default);
+  border-radius: 16px;
+  padding: 24px;
+  position: relative;
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--card-shadow);
+  }
+
+  &.popular {
+    border-color: var(--purple-100);
+    box-shadow: 0 0 0 1px var(--purple-100);
+  }
+}
+
+.popularTag {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+}
+
+.planHeader {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.price {
+  margin-top: 16px;
+}
+
+.currency {
+  font-size: 18px;
+  color: var(--text-secondary);
+  vertical-align: top;
+}
+
+.amount {
+  font-size: 48px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.interval {
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+.features {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 24px 0;
+
+  li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 8px 0;
+    color: var(--text-secondary);
+  }
+}
+
+.checkIcon {
+  color: var(--green-100);
+}

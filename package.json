@@ -1,0 +1,49 @@
+{
+  "name": "create-vite-react-template",
+  "version": "1.0.0",
+  "description": "交互式 CLI 工具，快速初始化 Vite + React + TypeScript 项目模板",
+  "type": "module",
+  "bin": {
+    "create-vite-react-template": "./bin/index.js"
+  },
+  "files": [
+    "bin",
+    "dist",
+    "templates"
+  ],
+  "scripts": {
+    "build": "tsup src/index.ts --format esm --dts --clean",
+    "dev": "tsup src/index.ts --format esm --watch",
+    "start": "node bin/index.js",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@clack/prompts": "^0.7.0",
+    "cac": "^6.7.14",
+    "fs-extra": "^11.2.0",
+    "picocolors": "^1.0.0"
+  },
+  "devDependencies": {
+    "@types/fs-extra": "^11.0.4",
+    "@types/node": "^20.11.0",
+    "tsup": "^8.0.1",
+    "typescript": "^5.3.3"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "keywords": [
+    "cli",
+    "vite",
+    "react",
+    "typescript",
+    "template",
+    "scaffold"
+  ],
+  "author": "caoxicheng",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/caoxicheng/create-vite-react-template.git"
+  }
+}

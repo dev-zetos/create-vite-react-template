@@ -1,0 +1,104 @@
+// src/assets/styles/semantic.scss
+// Semantic theme variables with light/dark mode support
+
+// Dark mode (default)
+:root {
+  // Background
+  --bg-primary: var(--gray-900);
+  --bg-input-pop: var(--gray-800);
+
+  // Surface
+  --surface-default: var(--gray-fff);
+  --surface-default7: var(--gray-700);
+  --surface-default8: var(--gray-800);
+  --surface-default9: var(--gray-900);
+
+  // Text
+  --text-main: var(--gray-fff);
+  --text-primary: #ffffffde;
+  --text-secondary: rgba(255, 255, 255, 0.6);
+  --text-supelement: rgba(255, 255, 255, 0.38);
+
+  // Border
+  --border-default: var(--gray-700);
+
+  // Sidebar
+  --sidebar-bg: var(--gray-800);
+  --sidebar-sel-bg: var(--gray-700);
+  --sidebar-text: rgba(255, 255, 255, 0.6);
+
+  // Pop/Modal
+  --pop-bg: var(--gray-700);
+  --pop-sel: var(--gray-600);
+
+  // Card
+  --card-bg: var(--gray-800);
+  --card-bg-alt: var(--gray-700);
+  --card-shadow: 0 0 40px rgba(195, 51, 255, 0.05);
+
+  // Button - Primary
+  --button-primary-bg: linear-gradient(100deg, #aa40ff 0%, #f92750 100%);
+  --button-primary-text: #fff;
+  --button-primary-hover-bg: linear-gradient(100deg, #c884ff 0%, #ff3e64 100%);
+  --button-primary-active-bg: linear-gradient(100deg, #8e16ef 0%, #e0022d 100%);
+
+  // Button - Default
+  --button-default-bg: transparent;
+  --button-default-border: var(--gray-600);
+  --button-default-text: var(--text-primary);
+  --button-default-hover-border: var(--purple-100);
+  --button-default-hover-text: var(--purple-100);
+
+  // Button - Ghost
+  --button-ghost-bg: var(--surface-default7);
+  --button-ghost-text: var(--text-primary);
+  --button-ghost-hover-bg: var(--surface-default6);
+}
+
+// Light mode
+[data-theme='light'] {
+  // Background
+  --bg-primary: var(--gray-50);
+  --bg-input-pop: var(--gray-50);
+
+  // Surface
+  --surface-default7: var(--gray-100);
+  --surface-default8: var(--gray-fff);
+  --surface-default9: var(--gray-fff);
+
+  // Text
+  --text-main: var(--deep-blue-100);
+  --text-primary: rgba(0, 0, 0, 0.87);
+  --text-secondary: rgba(0, 0, 0, 0.6);
+  --text-supelement: rgba(0, 0, 0, 0.38);
+
+  // Border
+  --border-default: var(--gray-100);
+
+  // Sidebar
+  --sidebar-bg: var(--gray-fff);
+  --sidebar-sel-bg: var(--gray-50);
+  --sidebar-text: rgba(0, 0, 0, 0.87);
+
+  // Pop/Modal
+  --pop-bg: var(--gray-fff);
+  --pop-sel: var(--gray-200);
+
+  // Card
+  --card-bg: var(--gray-fff);
+  --card-bg-alt: var(--gray-fff);
+
+  // Button - Primary (light mode gradient)
+  --button-primary-bg: linear-gradient(137deg, #0e0a45 0%, #3505b7 40%, #c333ff 80%, #ffae2b 100%);
+  --button-primary-hover-bg: linear-gradient(137deg, #1a1260 0%, #4a10d0 40%, #d455ff 80%, #ffbe50 100%);
+  --button-primary-active-bg: linear-gradient(137deg, #080530 0%, #2a0390 40%, #a020e0 80%, #e09020 100%);
+
+  // Button - Default
+  --button-default-bg: var(--gray-fff);
+  --button-default-border: var(--gray-200);
+  --button-default-text: var(--text-main);
+
+  // Button - Ghost
+  --button-ghost-bg: var(--gray-fff);
+  --button-ghost-hover-bg: var(--gray-100);
+}
