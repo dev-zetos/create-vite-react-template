@@ -1,8 +1,8 @@
 # 依赖
 node_modules/
 
-# 构建输出
-dist/
+# 构建输出（保留 dist/ 以支持 npx github: 安装）
+# dist/
 
 # 日志
 *.log
