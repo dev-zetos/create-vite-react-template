@@ -77,7 +77,7 @@ const Login: FC = () => {
         </Form>
 
         <div className={styles.footer}>
-          <Text>Don't have an account? </Text>
+          <Text>Don&apos;t have an account? </Text>
           <Link onClick={() => navigate('/register')}>Sign Up</Link>
         </div>
       </Card>
