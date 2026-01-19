@@ -1,6 +1,6 @@
 {
   "name": "create-vite-react-template",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "交互式 CLI 工具，快速初始化 Vite + React + TypeScript 项目模板",
   "type": "module",
   "bin": {
