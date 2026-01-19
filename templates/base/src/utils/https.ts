@@ -126,71 +126,79 @@ service.interceptors.response.use(
       return Promise.resolve(error.response);
     }
 
+    // TODO: 启用后端后取消注释以下代码以启用 Token 刷新
     // Handle 401 error - Token expired
-    if (status === 401 && originalRequest && !originalRequest._retry) {
-      if (isRefreshing) {
-        return new Promise((resolve, reject) => {
-          failedQueue.push({ resolve, reject });
-        })
-          .then((token) => {
-            if (originalRequest.headers) {
-              originalRequest.headers.Authorization = `Bearer ${token}`;
-            }
-            return service(originalRequest);
-          })
-          .catch((err) => Promise.reject(err));
-      }
+    // if (status === 401 && originalRequest && !originalRequest._retry) {
+    //   if (isRefreshing) {
+    //     return new Promise((resolve, reject) => {
+    //       failedQueue.push({ resolve, reject });
+    //     })
+    //       .then((token) => {
+    //         if (originalRequest.headers) {
+    //           originalRequest.headers.Authorization = `Bearer ${token}`;
+    //         }
+    //         return service(originalRequest);
+    //       })
+    //       .catch((err) => Promise.reject(err));
+    //   }
+    //
+    //   originalRequest._retry = true;
+    //   isRefreshing = true;
+    //
+    //   const refreshToken = useUserStore.getState().refreshToken;
+    //
+    //   if (!refreshToken) {
+    //     isRefreshing = false;
+    //     processQueue(error, null);
+    //     const errorMessage = (error?.response?.data as { message?: string })?.message || 'Session expired';
+    //     notifyError(errorMessage);
+    //     useUserStore.getState().clearAuth();
+    //     window.localStorage.clear();
+    //     redirectToLogin();
+    //     return Promise.reject(error);
+    //   }
+    //
+    //   try {
+    //     // Call refresh token API
+    //     const response = await axios.post(
+    //       `${import.meta.env.VITE_API_BASE_URL}/v1/auth/refresh`,
+    //       { refresh_token: refreshToken },
+    //       {
+    //         headers: {
+    //           'Content-Type': 'application/json;charset=UTF-8',
+    //         },
+    //       }
+    //     );
+    //
+    //     if (response.data.code === 200) {
+    //       const { access_token, refresh_token: newRefreshToken } = response.data.data;
+    //       useUserStore.getState().setTokens(access_token, newRefreshToken);
+    //
+    //       if (originalRequest.headers) {
+    //         originalRequest.headers.Authorization = `Bearer ${access_token}`;
+    //       }
+    //
+    //       processQueue(null, access_token);
+    //       isRefreshing = false;
+    //       return service(originalRequest);
+    //     }
+    //   } catch (refreshError) {
+    //     processQueue(refreshError as AxiosError, null);
+    //     isRefreshing = false;
+    //     notifyError('Session expired, please login again');
+    //     useUserStore.getState().clearAuth();
+    //     window.localStorage.clear();
+    //     redirectToLogin();
+    //     return Promise.reject(refreshError);
+    //   }
+    // }
 
-      originalRequest._retry = true;
-      isRefreshing = true;
-
-      const refreshToken = useUserStore.getState().refreshToken;
-
-      if (!refreshToken) {
-        isRefreshing = false;
-        processQueue(error, null);
-        const errorMessage = (error?.response?.data as { message?: string })?.message || 'Session expired';
-        notifyError(errorMessage);
-        useUserStore.getState().clearAuth();
-        window.localStorage.clear();
-        redirectToLogin();
-        return Promise.reject(error);
-      }
-
-      try {
-        // Call refresh token API
-        const response = await axios.post(
-          `${import.meta.env.VITE_API_BASE_URL}/v1/auth/refresh`,
-          { refresh_token: refreshToken },
-          {
-            headers: {
-              'Content-Type': 'application/json;charset=UTF-8',
-            },
-          }
-        );
-
-        if (response.data.code === 200) {
-          const { access_token, refresh_token: newRefreshToken } = response.data.data;
-          useUserStore.getState().setTokens(access_token, newRefreshToken);
-
-          if (originalRequest.headers) {
-            originalRequest.headers.Authorization = `Bearer ${access_token}`;
-          }
-
-          processQueue(null, access_token);
-          isRefreshing = false;
-          return service(originalRequest);
-        }
-      } catch (refreshError) {
-        processQueue(refreshError as AxiosError, null);
-        isRefreshing = false;
-        notifyError('Session expired, please login again');
-        useUserStore.getState().clearAuth();
-        window.localStorage.clear();
-        redirectToLogin();
-        return Promise.reject(refreshError);
-      }
-    }
+    // 临时：忽略未使用变量警告
+    void originalRequest;
+    void isRefreshing;
+    void failedQueue;
+    void processQueue;
+    void redirectToLogin;
 
     // Other error handling
     if (!error?.config?.hideMessageModal && error.name !== 'CanceledError' && error.name !== 'AbortError') {

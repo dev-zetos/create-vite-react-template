@@ -23,3 +23,6 @@ Thumbs.db
 
 # 测试输出
 test-output/
+
+# Claude Code 本地配置
+.claude/settings.local.json
