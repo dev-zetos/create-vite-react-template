@@ -12,9 +12,7 @@ const Home = lazy(() => import('../pages/Home'));
 const Login = lazy(() => import('../pages/Login'));
 
 // Loading spinner component
-const LoadingSpinner: FC = () => (
-  <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>Loading...</div>
-);
+const LoadingSpinner: FC = () => <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>Loading...</div>;
 
 // Suspense wrapper
 function withSuspense(Component: ComponentType) {
@@ -43,7 +41,7 @@ const routes: RouteObject[] = [
   },
   {
     path: '*',
-    element: <NotFound></NotFound>,
+    element: <NotFound />,
   },
 ];
 
